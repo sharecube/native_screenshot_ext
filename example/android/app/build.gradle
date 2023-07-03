@@ -48,6 +48,8 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    namespace 'jpg.ivan.native.screenshot'
 }
 
 flutter {

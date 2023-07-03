@@ -1,4 +1,20 @@
-include ':app'
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        jcenter()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
 
 def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
 
@@ -13,3 +29,6 @@ plugins.each { name, path ->
     include ":$name"
     project(":$name").projectDir = pluginDirectory
 }
+
+rootProject.name = "native_screenshot_ext"
+include ':app'
